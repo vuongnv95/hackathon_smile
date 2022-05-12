@@ -19,7 +19,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", "\"http://api.innoway.vn\""
+            buildConfigField "String", "APP_KEY", "\"nlaDOC8uS6Xn7L0JIcPD\""
+            buildConfigField "String", "APP_SECRET", "\"yKeMoImiHp9DUXxoGpERza31xSyCWunW\""
+        }
+
         release {
+            buildConfigField "String", "BASE_URL", "\"http://api.innoway.vn\""
+            buildConfigField "String", "APP_KEY", "\"nlaDOC8uS6Xn7L0JIcPD\""
+            buildConfigField "String", "APP_SECRET", "\"yKeMoImiHp9DUXxoGpERza31xSyCWunW\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
