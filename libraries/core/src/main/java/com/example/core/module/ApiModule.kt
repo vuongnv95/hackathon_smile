@@ -2,6 +2,7 @@ package com.example.core.module
 
 import android.content.Context
 import android.text.TextUtils
+import com.example.core.BuildConfig
 import com.example.core.network.ApiInterface
 import com.example.core.network.AuthApiInterface
 import com.example.core.network.NetworkInterceptor
@@ -25,6 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.lang.reflect.Type
 import java.util.concurrent.TimeUnit
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
@@ -42,22 +44,21 @@ class ApiModule {
     fun provideApiInterface(gson: Gson, client: OkHttpClient)
             : ApiInterface {
         val retrofit = Retrofit.Builder()
-            .baseUrl(Constants.ApiComponents.BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         return retrofit.create(ApiInterface::class.java)
     }
 
-
     @Provides
     @Singleton
     fun provideAuthApiInterface(
         gson: Gson,
-        client: OkHttpClient
+        @AuthServerHttpClient client: OkHttpClient
     ): AuthApiInterface {
         val retrofit = Retrofit.Builder()
-            .baseUrl(Constants.ApiComponents.BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(NullOnEmptyConverterFactory())
             .addConverterFactory(GsonConverterFactory.create(gson))
@@ -77,9 +78,7 @@ class ApiModule {
                     chain.request()
                         .newBuilder()
                         .header("Content-Type", "application/json")
-                        .addHeader(
-                            "Authorization", rxPreferences.getToken()!!
-                        )
+                        .addHeader("Authorization", rxPreferences.getToken()!!)
                         .build()
                 } else {
                     chain.request()
@@ -87,6 +86,36 @@ class ApiModule {
                         .header("Content-Type", "application/json")
                         .build()
                 }
+
+                chain.proceed(request)
+            })
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(NetworkInterceptor())
+            .connectTimeout(Constants.DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
+            .readTimeout(Constants.DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
+            .writeTimeout(Constants.DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
+            .build()
+    }
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class AuthServerHttpClient
+
+    @AuthServerHttpClient
+    @Provides
+    @Singleton
+    fun provideAuthHttpClient(cache: Cache?): OkHttpClient {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return OkHttpClient.Builder()
+            .cache(cache)
+            .addInterceptor(Interceptor { chain: Interceptor.Chain ->
+                val request = chain.request()
+                    .newBuilder()
+                    .header("Content-Type", "application/json")
+                    .addHeader("AppKey", BuildConfig.APP_KEY)
+                    .addHeader("AppSecret", BuildConfig.APP_SECRET)
+                    .build()
 
                 chain.proceed(request)
             })

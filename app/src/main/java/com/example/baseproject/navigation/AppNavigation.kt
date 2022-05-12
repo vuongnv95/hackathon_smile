@@ -7,6 +7,4 @@ interface AppNavigation : BaseNavigator {
 
     fun openSplashToHomeScreen(bundle: Bundle? = null)
 
-    fun openSplashToLoginScreen(bundle: Bundle? = null)
-
 }

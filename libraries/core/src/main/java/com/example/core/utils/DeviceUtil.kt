@@ -21,8 +21,6 @@ import android.util.Patterns
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ProcessLifecycleOwner
 
 class DeviceUtil {
 
@@ -66,14 +64,6 @@ class DeviceUtil {
 //                context!!.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager //api 23+
 //            return keyguardManager.isDeviceLocked
 //        }
-
-        fun isAppVisible(): Boolean {
-            return ProcessLifecycleOwner
-                .get()
-                .lifecycle
-                .currentState
-                .isAtLeast(Lifecycle.State.STARTED)
-        }
 
         fun isHasCameraHardware(context: Context): Boolean {
             return try {
