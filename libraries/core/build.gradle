@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -52,6 +53,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation libraries.hilt
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
     kapt libraries.hiltSupport
     //implementation libraries.hiltViewModel
     //kapt libraries.hiltCompiler
@@ -84,5 +86,5 @@ dependencies {
     implementation libraries.glide
     kapt libraries.glideCompiler
 
-
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 }

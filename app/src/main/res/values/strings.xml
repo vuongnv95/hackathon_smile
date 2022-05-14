@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BaseProject</string>
+    <string name="information">%s - %s</string>
 </resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1067302635677",
+    "firebase_url": "https://ace-onsiter-iot-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ace-onsiter-iot",
+    "storage_bucket": "ace-onsiter-iot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067302635677:android:16c63477ab1efd2a2dec74",
+        "android_client_info": {
+          "package_name": "com.project.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067302635677-598sh10ov61ucbat8cnt99vg0iut72sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD59MAeva1E7m2Q2xwlGpZ9Eb_NUfnazEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067302635677-598sh10ov61ucbat8cnt99vg0iut72sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
