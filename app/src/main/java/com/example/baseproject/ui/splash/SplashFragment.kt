@@ -28,9 +28,16 @@ class SplashFragment :
 
     override fun bindingAction() {
         super.bindingAction()
-        viewModel.actionSPlash.observe(viewLifecycleOwner) {
-            if (it is SplashActionState.Finish)
-                appNavigation.openSplashToHomeScreen(Bundle())
+        viewModel.actionSplash.observe(viewLifecycleOwner) {
+            when (it) {
+                is SplashActionState.OpenPair -> {
+                    appNavigation.splashToPairFragment()
+                }
+
+                is SplashActionState.OpenHome -> {
+                    appNavigation.splashToHomeFragment()
+                }
+            }
         }
     }
 

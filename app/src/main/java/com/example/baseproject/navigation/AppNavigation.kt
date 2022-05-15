@@ -5,6 +5,10 @@ import com.example.core.navigationComponent.BaseNavigator
 
 interface AppNavigation : BaseNavigator {
 
-    fun openSplashToHomeScreen(bundle: Bundle? = null)
+    fun splashToPairFragment(bundle: Bundle? = null)
+
+    fun pairToHomeFragment(bundle: Bundle? = null)
+
+    fun splashToHomeFragment(bundle: Bundle? = null)
 
 }

@@ -59,7 +59,8 @@ dependencies {
     implementation libraries.fragment
 
     implementation libraries.hilt
-    implementation 'com.google.firebase:firebase-database-ktx:20.0.1'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.4'
     kapt libraries.hiltSupport
     //implementation libraries.hiltViewModel
     //kapt libraries.hiltCompiler

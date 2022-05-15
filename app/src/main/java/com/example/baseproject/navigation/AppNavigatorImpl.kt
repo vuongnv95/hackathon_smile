@@ -9,7 +9,16 @@ import javax.inject.Inject
 class AppNavigatorImpl @Inject constructor() : BaseNavigatorImpl(),
     AppNavigation, DemoNavigation {
 
-    override fun openSplashToHomeScreen(bundle: Bundle?) {
+
+    override fun splashToPairFragment(bundle: Bundle?) {
+        openScreen(R.id.action_splashFragment_to_pairFragment, bundle)
+    }
+
+    override fun pairToHomeFragment(bundle: Bundle?) {
+        openScreen(R.id.action_pairFragment_to_homeFragment, bundle)
+    }
+
+    override fun splashToHomeFragment(bundle: Bundle?) {
         openScreen(R.id.action_splashFragment_to_homeFragment, bundle)
     }
 }

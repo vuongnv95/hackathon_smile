@@ -20,7 +20,7 @@
             android:id="@+id/tvInformation"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@drawable/bg_information"
+            android:background="@drawable/bg_info"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
@@ -37,6 +37,7 @@
             android:id="@+id/ivCall"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:elevation="@dimen/padding_13"
             android:src="@drawable/phone_call"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
@@ -51,13 +52,27 @@
             android:id="@+id/ivStopCar"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/stop_car"
+            android:elevation="@dimen/padding_13"
+            android:src="@drawable/ic_car_in_map"
             app:layout_constraintBottom_toBottomOf="@id/ivCall"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/ivCall" />
+
+        <View
+            android:id="@+id/viewStop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/stop"
+            android:elevation="@dimen/padding_13"
+            app:layout_constraintBottom_toBottomOf="@id/ivStopCar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/ivStopCar"
+            app:layout_constraintStart_toStartOf="@id/ivStopCar"
+            app:layout_constraintTop_toTopOf="@id/ivStopCar"
+            app:layout_constraintWidth_percent="0.15" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

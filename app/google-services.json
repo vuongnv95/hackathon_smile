@@ -1,34 +1,63 @@
 {
   "project_info": {
-    "project_number": "1067302635677",
-    "firebase_url": "https://ace-onsiter-iot-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "ace-onsiter-iot",
-    "storage_bucket": "ace-onsiter-iot.appspot.com"
+    "project_number": "387908348810",
+    "firebase_url": "https://smart-car-edca4-default-rtdb.firebaseio.com",
+    "project_id": "smart-car-edca4",
+    "storage_bucket": "smart-car-edca4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1067302635677:android:16c63477ab1efd2a2dec74",
+        "mobilesdk_app_id": "1:387908348810:android:300bf4391510d7bce57673",
         "android_client_info": {
           "package_name": "com.project.demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1067302635677-598sh10ov61ucbat8cnt99vg0iut72sf.apps.googleusercontent.com",
+          "client_id": "387908348810-b4tj4tp5ol2lo4k1pbd8e077omaeei0f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD59MAeva1E7m2Q2xwlGpZ9Eb_NUfnazEk"
+          "current_key": "AIzaSyB0RMqz8Lm1O7quliuOFW131-hQZCIqQ8M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1067302635677-598sh10ov61ucbat8cnt99vg0iut72sf.apps.googleusercontent.com",
+              "client_id": "387908348810-b4tj4tp5ol2lo4k1pbd8e077omaeei0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387908348810:android:c9e22cedee4a9485e57673",
+        "android_client_info": {
+          "package_name": "com.rikkei.smart_car"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387908348810-b4tj4tp5ol2lo4k1pbd8e077omaeei0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0RMqz8Lm1O7quliuOFW131-hQZCIqQ8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387908348810-b4tj4tp5ol2lo4k1pbd8e077omaeei0f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
